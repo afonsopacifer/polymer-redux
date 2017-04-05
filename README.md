@@ -4,6 +4,7 @@
 
 [![Travis CI Status](https://travis-ci.org/afonsopacifer/polymer-redux.svg?branch=master)](https://travis-ci.org/afonsopacifer/polymer-redux)
 
+![demo](demo.gif)
 
 ## Run the project locally
 
