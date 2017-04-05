@@ -17,7 +17,7 @@ $ npm install -g polymer-cli
 **2 -** Clone the project and install the dependencies:
 
 ```sh
-$ git clone https://github.com/afonsopacifer/react-pomodoro.git
+$ git clone https://github.com/afonsopacifer/polymer-redux.git
 $ cd polymer-redux
 $ npm install
 $ bower install
