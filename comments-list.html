@@ -1,0 +1,35 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+<link rel="import" href="store.html">
+<link rel="import" href="comments-item.html">
+
+<dom-module id="comments-list">
+
+    <template>
+        <ul>
+
+            <!-- Bind state with propertie -->
+            <template is="dom-repeat" items="[[comments]]" as="comment">
+                <comments-item id="[[comment.id]]">[[comment.text]]</comments-item>
+            </template>
+
+        </ul>
+    </template>
+
+    <script>
+        Polymer({
+            is: 'comments-list',
+
+            // add Redux behavior
+            behaviors: [ ReduxBehavior ],
+
+            properties: {
+                // Receive states
+                comments: {
+                    type: Object,
+                    statePath: 'comments'
+                }
+            },
+        });
+    </script>
+
+</dom-module>

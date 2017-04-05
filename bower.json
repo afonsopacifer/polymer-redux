@@ -1,0 +1,27 @@
+{
+  "name": "polymer-redux",
+  "authors": [
+    "afonsopacifer <afonsopolis@gmail.com>"
+  ],
+  "description": "Implementing Redux with Polymer",
+  "main": "index.html",
+  "keywords": [
+    "redux",
+    "polymer",
+    "webcomponents"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "polymer/polymer#^1.8.1",
+    "github-corner": "^1.0.0",
+    "polymer-redux": "tur-nr/polymer-redux#^0.4.2"
+  }
+}

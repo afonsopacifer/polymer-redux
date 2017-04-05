@@ -1,0 +1,60 @@
+<link rel="import" href="bower_components/polymer-redux/polymer-redux.html">
+
+<script>
+
+    // Default state
+    const initialState = {
+        comments: [
+            {text: 'Hello Polymer 🦄', id: 0},
+            {text: 'Hello Redux 😎', id: 1}
+        ]
+    }
+
+    // Reducer
+    const reducer = (state, action) => {
+
+        // Set deafult state
+        if (!state) return initialState;
+
+        // Actions
+        switch (action.type) {
+
+            // ADD_COMMENT
+            // ------------------------
+            case 'ADD_COMMENT':
+
+            // add new array item
+            const commentsList = state.comments.slice(0);
+            commentsList.push({
+                text: action.comment, 
+                id: commentsList[commentsList.length - 1].id + 1
+            });
+
+            // set new state
+            return Object.assign({}, state, { comments: commentsList });
+            break;
+
+            // DELETE_COMMENT
+            // ------------------------
+            case 'DELETE_COMMENT':
+
+            // remove item from array
+            const newList = state.comments.filter((c) => {
+                return c.id !== action.id
+            });
+
+            // set new state
+            return Object.assign({}, state, { comments: newList });
+            break;
+
+        }
+
+    }
+
+    // Store
+    const store = Redux.createStore(reducer);
+
+    // Create behavior for polymer elements
+    const ReduxBehavior = PolymerRedux(store);
+
+</script>

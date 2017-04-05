@@ -1,0 +1,47 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+<link rel="import" href="store.html">
+
+<dom-module id="comments-item">
+
+    <template>
+        <li>
+            <content>[[id]]</content> 
+            <button on-tap="deleteComment">delete</button>
+        </li>
+    </template>
+
+    <script>
+        Polymer({
+            is: 'comments-item',
+
+             // add Redux behavior
+            behaviors: [ ReduxBehavior ],
+
+            // get id
+            properties: {
+                id: {
+                    type: Number
+                }
+            },
+            
+            // Set actions
+            actions: {
+
+                // DELETE_COMMENT
+                delete: function() {
+                    return {
+                        type: 'DELETE_COMMENT',
+                        id: this.id
+                    }
+                }
+
+            },
+
+            //Dispatch DELETE_COMMENT
+            deleteComment: function() {
+                this.dispatch('delete');
+            }
+        });
+    </script>
+
+</dom-module>

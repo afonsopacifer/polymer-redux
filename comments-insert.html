@@ -1,0 +1,44 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+<link rel="import" href="store.html">
+
+<dom-module id="comments-insert">
+
+    <template>
+        <input id='inputText'>
+        <button on-tap="addComment">Add</button>
+    </template>
+
+    <script>
+        Polymer({
+            is: 'comments-insert',
+            
+            // add Redux behavior
+            behaviors: [ ReduxBehavior ],
+            
+            // Set actions
+            actions: {
+
+                // ADD_COMMENT
+                add: function(commentTxt) {
+                    return {
+                        type: 'ADD_COMMENT',
+                        comment: commentTxt
+                    }
+                }
+
+            },
+
+            //Dispatch ADD_COMMENT
+            addComment: function() {
+                const input = this.$.inputText;
+                if (input.value) {
+                    this.dispatch('add', input.value);
+                    input.value = '';
+                    input.focus();
+                }
+            }
+
+        });
+    </script>
+
+</dom-module>
