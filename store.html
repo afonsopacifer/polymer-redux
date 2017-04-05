@@ -27,7 +27,12 @@
             const commentsList = state.comments.slice(0);
             commentsList.push({
                 text: action.comment, 
-                id: commentsList[commentsList.length - 1].id + 1
+                id: number => {  
+                  if(commentsList.length){  
+                    return commentsList[commentsList.length - 1].id + 1
+                  }
+                  return 0
+                }
             });
 
             // set new state
