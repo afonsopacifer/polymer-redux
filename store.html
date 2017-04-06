@@ -25,9 +25,10 @@
 
             // add new array item
             const commentsList = state.comments.slice(0);
+            const generateId = commentsList.length ? commentsList[commentsList.length - 1].id + 1 : 0
             commentsList.push({
                 text: action.comment, 
-                id: commentsList[commentsList.length - 1].id + 1
+                id: generateId
             });
 
             // set new state
