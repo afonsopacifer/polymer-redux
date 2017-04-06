@@ -25,14 +25,10 @@
 
             // add new array item
             const commentsList = state.comments.slice(0);
+            const initialId = commentsList.length ? commentsList[commentsList.length - 1].id + 1 : 0
             commentsList.push({
                 text: action.comment, 
-                id: number => {  
-                  if(commentsList.length){  
-                    return commentsList[commentsList.length - 1].id + 1
-                  }
-                  return 0
-                }
+                id: initialId
             });
 
             // set new state
