@@ -1,12 +1,14 @@
-# Polymer and Redux 🦄
+# Polymer / Redux demo 🦄
 
 > Implementing Redux with Polymer.
 
 [![Travis CI Status](https://travis-ci.org/afonsopacifer/polymer-redux.svg?branch=master)](https://travis-ci.org/afonsopacifer/polymer-redux)
 
-![demo](demo.gif)
+![polymer-redux](polymer-redux.png)
 
 ## Run the project locally
+
+![demo](demo.gif)
 
 **1 -** Prepare the environment:
 
